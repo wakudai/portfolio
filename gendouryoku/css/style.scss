@@ -1,0 +1,493 @@
+//カラー
+$accent-color: #f59b00;
+$white: #fff;
+$gray: #b2b2b2;
+$common-use: #333;
+
+// フォント
+$text-font: 'Noto Sans CJK JP';
+$mv-en-font: 'STIX Two Text';
+$mv-ja-font: 游明朝体;
+$section-ttl-font: Didot;
+
+// メディアクエリ
+$pc: 1025px;
+$tb-max: 1024px;
+$tb-min: 768px;
+$sp: 767px;
+
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tb {
+    @media (min-width: ($tb-min)) and (max-width: ($tb-max)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+
+
+// メインビジュアル
+.mv {
+    background-image: url(../images/img_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+
+    .mv__cont {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 10px;
+
+        .mv__cont--bgTtl {
+            font-family: $mv-en-font;
+            position: absolute;
+            left: 28%;
+            line-height: 1.75;
+            color: #fff;
+            opacity: 0;
+
+            @include pc {
+                font-size: 8rem;
+            };
+
+            @include tb {
+                font-size: 7rem;
+                left: 23%;
+            };
+
+            @include sp {
+                font-size: 3rem;
+                left: 20%
+            };
+
+            &:nth-child(1) {
+                top: 25%;
+
+                @include tb {
+                    top: 35%;
+                };
+
+                @include sp {
+                    top: 30%;
+                };
+            }
+
+            &:nth-child(2) {
+                top: 42%;
+
+                @include tb {
+                    top: 45%;
+                };
+
+                @include sp {
+                    top: 40%;
+                };
+            }
+
+            &:nth-child(3) {
+                top: 59%;
+
+                @include tb {
+                    top: 55%;
+                };
+
+                @include sp {
+                    top: 50%;
+                };
+            }
+        }
+
+        /* fadeIn-title animation (左から右)*/
+        @keyframes fadeIn-titleAnime {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            100% {
+                opacity: 5%;
+                transform: translateX(0);
+            }
+        }
+
+        .fadeIn-title {
+            animation-name: fadeIn-titleAnime;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+        }
+
+        .fadeIn-title-second {
+            animation-name: fadeIn-titleAnime;
+            animation-duration: 4s;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .fadeIn-title-third {
+            animation-name: fadeIn-titleAnime;
+            animation-duration: 4s;
+            animation-delay: 2.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .mv__contTtl {
+            writing-mode: vertical-rl;
+            font-family: $mv-ja-font;
+            color: $white;
+            font-size: 4rem;
+
+            @include sp {
+                font-size: 2rem;
+            };
+
+            #js_contTtl {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                display: block;
+                opacity: 0;
+                line-height: 2;
+
+                span {
+                    opacity: 0;
+                    transition: .6s ease-in-out;
+
+                    &:nth-child(10) {
+
+                        @include pc {
+                            margin-top: 30%;
+                        }
+                    }
+                }
+            }
+        }
+
+        @keyframes pathMove {
+            0% {
+                height: 0;
+                top: 80%;
+                opacity: 0;
+            }
+            30% {
+                height: 30px;
+                opacity: 1;
+            }
+            100% {
+                height: 0;
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        .mv__scroll {
+            position: absolute;
+            bottom: 10%;
+            display: flex;
+            animation: pathMove 1.8s ease-in-out infinite;
+
+            @include pc {
+                right: 15%;
+            };
+
+            @include tb {
+                right: 1%;
+            };
+
+            @include sp {
+                right: 1%;
+            };
+
+            .mv__scroll--txt {
+                color: $accent-color;
+                writing-mode: vertical-rl;
+                text-orientation: sideways;
+                margin-right: 5px;
+            }
+
+            .mv__scroll--arrow {
+                display: block;
+                width: 5px;
+                border-left: solid 1px $accent-color;
+                border-bottom: solid 1px $accent-color;
+                transform: skew(0deg, -45deg);
+            }
+        }
+    }
+}
+
+// TOPページ ABOUT
+.about {
+    margin: 150px 0;
+
+    @include tb {
+        margin: 100px 0;
+    };
+
+    @include sp {
+        margin: 80px 0;
+    };
+
+    .about__ttl {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+
+        @include pc {
+            transform: translateX(-50px);
+        };
+    }
+
+    .fadeIn__left {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fadeIn__bottom {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .about__flexBox {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        @include tb {
+            flex-direction: column
+        };
+
+        @include sp {
+            flex-direction: column
+        };
+
+        .about__prof {
+            width: 100%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, visibility 1s, transform 1s;
+
+            @include pc {
+                width: 40%;
+                transform: translateX(-50px);
+            };
+
+            @include tb {
+                margin-bottom: 40px;
+            };
+
+            @include sp {
+                margin-bottom: 30px;
+            };
+
+            .about__profTtl {
+                font-family: $text-font;
+                font-size: 3rem;
+                font-weight: bold;
+                margin-bottom: 40px;
+
+                @include tb {
+                    text-align: center;
+                };
+
+                @include sp {
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-bottom: 30px;
+                };
+            }
+
+            .about__profTxt {
+                font-feature-settings: "palt";
+                font-family: $text-font;
+                font-weight: lighter;
+                font-size: 1.6rem;
+                line-height: 2.5;
+
+                @include tb {
+                    width: 90%;
+                    margin: 0 auto;
+                };
+
+                @include sp {
+                    width: 86%;
+                    margin: 0 auto;
+                };
+            }
+        }
+
+        .fadeIn__left {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fadeIn__bottom {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about__profImg {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, visibility 1s, transform 1s;
+
+            @include pc {
+                width: 55%;
+                transform: translateX(50px);
+            };
+
+            @include tb {
+                width: 90%;
+                margin: 0 auto;
+            };
+
+            @include sp {
+                width: 100%;
+            };
+
+            img {
+                width: 100%;
+                filter: saturate(0);
+                transition: 0.3s;
+
+                &:hover {
+                    filter: saturate(1);
+                }
+            }
+        }
+
+        .fadeIn__right {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fadeIn__bottom {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .about__btn {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+
+        @include pc {
+            width: 55%;
+            transform: translateX(50px);
+        };
+
+        a {
+            margin: 0 auto;
+
+            @include pc {
+                margin-left: auto;
+            };
+        }
+    }
+
+    .fadeIn__right {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fadeIn__bottom {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+// TOPページ WORKS
+.works {
+    margin-bottom: 150px;
+
+    @include tb {
+        margin-bottom: 100px;
+    };
+
+    @include sp {
+        margin-bottom: 80px;
+    };
+
+    .works__ttl {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+        text-align: center;
+
+        @include pc {
+        text-align: right;
+        transform: translateX(50px);
+        };
+    }
+
+    .fadeIn__right {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fadeIn__bottom {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .works__cont {
+        width: 100%;
+        margin: 0 auto;
+
+        @include pc {
+            width: 70%;
+        };
+
+        .works__img {
+            margin-bottom: 70px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, visibility 1s, transform 1s;
+
+            @include sp {
+                margin-bottom: 30px;
+            };
+
+            .works__img-dtl {
+                margin-top: 10px;
+                font-family: $text-font;
+                font-size: 1.6rem;
+                color: $common-use;
+            }
+        }
+
+        .fadeIn__bottom {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .works__btn {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+
+        a {
+            margin: 0 auto;
+        }
+    }
+
+    .fadeIn__bottom {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

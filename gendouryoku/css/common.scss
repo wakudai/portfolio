@@ -1,0 +1,509 @@
+//カラー
+$accent-color: #f59b00;
+$white: #fff;
+$gray: #b2b2b2;
+$common-use: #333;
+
+// フォント
+$text-font: 'Noto Sans CJK JP';
+$mv-en-font: 'STIX Two Text';
+$mv-ja-font: 游明朝体;
+$section-ttl-font: Didot;
+
+// メディアクエリ
+$pc: 1025px;
+$tb-max: 1024px;
+$tb-min: 768px;
+$sp: 767px;
+
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tb {
+    @media (min-width: ($tb-min)) and (max-width: ($tb-max)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li,
+figure {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+
+// 共通設定
+
+//ヘッダー
+.header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 9999;
+
+    .header__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        max-width: 1000px;
+        height: 100px;
+        margin: 0 auto;
+
+        @include sp {
+            height: 60px;
+        };
+
+        .header__logo {
+            width: 100%;
+
+            .header__logoImg {
+                position: fixed;
+                top: 20px;
+                height: 80px;
+
+                @include sp {
+                    height: 50px;
+                };
+            }
+        }
+
+        // ハンバーガーボタン アニメーション
+        @keyframes hamburger-animation01 {
+            0% {
+                width: 70%;
+            }
+            10% {
+                width: 50%;
+            }
+            20% {
+                width: 100%;
+            }
+            30% {
+                width: 10%;
+            }
+            40% {
+                width: 50%;
+            }
+            50% {
+                width: 70%;
+            }
+            60% {
+                width: 50%;
+            }
+            70% {
+                width: 10%;
+            }
+            80% {
+                width: 100%;
+            }
+            90% {
+                width: 10%;
+            }
+            100% {
+                width: 70%;
+            }
+        }
+
+        @keyframes hamburger-animation02 {
+            0% {
+                width: 30%;
+            }
+            10% {
+                width: 20%;
+            }
+            20% {
+                width: 40%;
+            }
+            30% {
+                width: 10%;
+            }
+            40% {
+                width: 20%;
+            }
+            50% {
+                width: 30%;
+            }
+            60% {
+                width: 20%;
+            }
+            70% {
+                width: 10%;
+            }
+            80% {
+                width: 40%;
+            }
+            90% {
+                width: 10%;
+            }
+            100% {
+                width: 30%;
+            }
+        }
+
+        //ハンバーガーボタン
+        .header__humBtn {
+            display: block;
+            width: 60px;
+            height: 80px;
+            transform: translate(0,0);
+            transition: all .5s;
+            cursor: pointer;
+            z-index: 10;
+
+            .header__humBtn--line {
+                display: block;
+                position: absolute;
+                height: 3px;
+                right: 0;
+                transition: all .5s;
+                background-color: $accent-color;
+
+                &:nth-child(1) {
+                    top: 30px;
+                    width: 60px;
+                    animation: hamburger-animation01 7000ms infinite;
+                }
+
+                &:nth-child(2) {
+                    top: 40px;
+                    width: 30px;
+                    animation: hamburger-animation02 5000ms infinite;
+                    animation-delay: 0.33s;
+                }
+
+                &:nth-child(3) {
+                    top: 50px;
+                    width: 20px;
+                    animation: hamburger-animation02 5000ms infinite;
+                }
+            }
+        }
+
+        // ハンバーガー閉じるボタン
+        .header__humBtn.open .header__humBtn--line {
+            background: $accent-color;
+            width: 30px;
+
+            &:nth-child(1) {
+                transform: translate(0, 10px) rotate(-45deg);
+                animation: unset;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+                animation: unset;
+            }
+
+            &:nth-child(3) {
+                transform: translate(0, -10px) rotate(45deg);
+                animation: unset;
+            }
+        }
+
+        // ハンバーガーメニュー
+        .header__nav {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url(../images/img_bg.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+
+            .header__navList {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+
+                .header__navItem {
+                    padding: 40px 0;
+                    color: $accent-color;
+                    font-size: 2.5rem;
+                    font-family: $text-font;
+                }
+            }
+        }
+    }
+}
+
+// セクション
+.sect__wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    .sect__ttl {
+        font-family: $section-ttl-font;
+        font-style: italic;
+        font-size: 8rem;
+        color: $gray;
+        margin-bottom: 80px;
+
+        @include tb {
+            font-size: 5rem;
+            text-align: center
+        };
+
+        @include sp {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 40px
+        };
+    }
+}
+
+// フッター
+.footer {
+    background-image: url(../images/img_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    padding: 80px 0;
+
+    @include sp {
+        padding: 40px 0px;
+    };
+
+    .footer__wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+
+        .footer__logo {
+            width: 20%;
+            margin: 0 auto 40px auto;
+        }
+
+        .footer__txtArea {
+            width: auto;
+            margin: 0 auto 30px auto;
+
+
+            @include pc {
+                width: 55%;
+                margin-bottom: 40px;
+            };
+
+            @include tb {
+                width: 55%;
+                margin-bottom: 40px;
+            };
+
+            dl {
+                display: flex;
+                align-items: baseline;
+                margin-bottom: 30px;
+
+                @include sp {
+                    flex-direction: column;
+                    align-items: normal;
+                    text-align: center;
+                }
+
+                dt {
+                    font-family: $section-ttl-font;
+                    font-size: 2.4rem;
+                    font-style: italic;
+                    color: $white;
+                    width: 30%;
+
+                    @include sp {
+                        font-size: 1.6rem;
+                        width: auto;
+                    }
+                }
+
+                dd {
+                    font-family: $text-font;
+                    font-size: 1.6em;
+                    color: $white;
+
+                    @include sp {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+
+            :nth-child(2) {
+                margin-bottom: 0;
+            }
+        }
+
+        .footer_contBtn {
+            margin-bottom: 40px;
+
+            @include sp {
+                margin-bottom: 30px;
+            };
+
+            a {
+                color: $common-use;
+                font-size: 1.6em;
+                font-weight: bold;
+                background-color: $accent-color;
+                padding: 18px 30px;
+                border-radius: 100px;
+                position: relative;
+                z-index: 1;
+                transition: .3s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20%;
+                text-align: center;
+                margin: 0 auto;
+                color: $white;
+
+                @include sp {
+                    width: 50%;
+                    margin: 0 auto;
+                    font-size: 1.3em;
+                    padding: 10px 15px;
+                };
+
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -10;
+                    background-color: $white;
+                    transform-origin: 100% 50%;
+                    transform: scaleX(0);
+                    transition: transform ease .3s;
+                }
+
+                &:hover {
+                    color: $accent-color;
+
+                    &::before {
+                        transform-origin: 0% 50%;
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+
+        .footer__instIco {
+            width: 4.8%;
+            margin: 0 auto 40px auto;
+
+            @include sp {
+                width: 6%;
+                margin-bottom: 30px;
+            };
+        }
+    }
+
+    .footer__cp {
+        text-align: center;
+        color: $white;
+    }
+}
+
+// アンカーボタン
+.anchor-btn {
+    a {
+        color: $common-use;
+        font-size: 1.6em;
+        font-weight: bold;
+        background-color: transparent;
+        padding: 18px 30px;
+        border: solid 1px $common-use;
+        border-radius: 100px;
+        position: relative;
+        z-index: 1;
+        transition: .3s;
+        display: block;
+        width: 20%;
+        text-align: center;
+
+        @include sp {
+            width: 50%;
+            margin: 0 auto;
+            font-size: 1.3em;
+            padding: 10px 15px;
+        };
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -10;
+            background-color: $common-use;
+            transform-origin: 100% 50%;
+            transform: scaleX(0);
+            transition: transform ease .3s;
+        }
+
+        &:hover {
+            color: $white;
+
+            &::before {
+                transform-origin: 0% 50%;
+                transform: scaleX(1);
+            }
+        }
+    }
+}
