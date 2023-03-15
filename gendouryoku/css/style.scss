@@ -385,7 +385,6 @@ $sp: 767px;
         transition: opacity 1s, visibility 1s, transform 1s;
 
         @include pc {
-            width: 55%;
             transform: translateX(50px);
         };
 
@@ -393,7 +392,7 @@ $sp: 767px;
             margin: 0 auto;
 
             @include pc {
-                margin-left: auto;
+                margin: 0 0 0 auto;
             };
         }
     }

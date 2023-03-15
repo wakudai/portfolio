@@ -1,0 +1,290 @@
+.mv {
+  width: 100vw;
+}
+.mv .mv__img--bg {
+  -webkit-clip-path: polygon(100% 0, 0 100%, 0 0%);
+          clip-path: polygon(100% 0, 0 100%, 0 0%);
+}
+.mv .mv__img--bg img {
+  height: 100%;
+}
+.mv .mv__img--main {
+  position: absolute;
+  top: 0%;
+  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+.mv .mv__img--main img {
+  height: 100%;
+  filter: saturate(0);
+  transition: 0.3s;
+}
+.mv .mv__img--main img:hover {
+  filter: saturate(1);
+}
+.mv .mv__cont {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.mv .mv__cont .mv__pageTtl {
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  font-size: 12rem;
+  font-family: Didot;
+  color: #fff;
+  font-style: italic;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mv .mv__cont .mv__pageTtl {
+    font-size: 8rem;
+    top: 18%;
+  }
+}
+@media (max-width: 767px) {
+  .mv .mv__cont .mv__pageTtl {
+    font-size: 4rem;
+    top: 14%;
+    left: 13%;
+  }
+}
+.mv .mv__cont .mv__page--subTtl {
+  position: absolute;
+  top: 63%;
+  left: 24%;
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+  color: #fff;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mv .mv__cont .mv__page--subTtl {
+    top: 25%;
+    left: 24%;
+  }
+}
+@media (max-width: 767px) {
+  .mv .mv__cont .mv__page--subTtl {
+    font-size: 1.3rem;
+    top: 21%;
+    left: 12%;
+  }
+}
+
+.prof {
+  margin: 150px 0;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .prof {
+    margin: 100px 0;
+  }
+}
+@media (max-width: 767px) {
+  .prof {
+    margin: 80px 0;
+  }
+}
+@media (min-width: 1025px) {
+  .prof .prof__flexBox {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.prof .prof__flexBox .prof__img {
+  filter: saturate(0);
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+@media (min-width: 1025px) {
+  .prof .prof__flexBox .prof__img {
+    width: 38%;
+    transform: translateX(-50px);
+  }
+}
+.prof .prof__flexBox .prof__img:hover {
+  filter: saturate(1);
+}
+.prof .prof__flexBox .prof__img img {
+  width: 100%;
+  height: 100%;
+}
+.prof .prof__flexBox .fadeIn__right {
+  opacity: 1;
+  transform: translateY(0);
+}
+.prof .prof__flexBox .fadeIn__bottom {
+  opacity: 1;
+  transform: translateX(0);
+}
+.prof .prof__flexBox .prof__cont {
+  opacity: 0;
+  margin-top: 80px;
+  color: #333;
+  transform: translateY(50px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+@media (min-width: 1025px) {
+  .prof .prof__flexBox .prof__cont {
+    width: 56.5%;
+    margin: 0;
+    transform: translateX(50px);
+  }
+}
+.prof .prof__flexBox .prof__cont .prof__name {
+  margin-bottom: 50px;
+  font-size: 2.4rem;
+  border-bottom: solid 1px #333;
+  width: 93%;
+  padding-bottom: 10px;
+  font-family: "Noto Sans CJK JP";
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .prof .prof__flexBox .prof__cont .prof__name {
+    width: 53%;
+    margin: 0 auto 40px auto;
+  }
+}
+@media (max-width: 767px) {
+  .prof .prof__flexBox .prof__cont .prof__name {
+    width: 75%;
+    margin: 0 auto 40px auto;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+.prof .prof__flexBox .prof__cont .prof__name .romaji {
+  font-family: Didot;
+}
+.prof .prof__flexBox .prof__cont .prof__name .prof__date-of-birth {
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+}
+.prof .prof__flexBox .prof__cont .prof__contBox {
+  margin-bottom: 50px;
+}
+.prof .prof__flexBox .prof__cont .prof__contBox:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .prof .prof__flexBox .prof__cont .prof__contBox {
+    width: 90%;
+    margin: 0 auto 50px auto;
+  }
+}
+@media (max-width: 767px) {
+  .prof .prof__flexBox .prof__cont .prof__contBox {
+    width: 75%;
+    margin: 0 auto 50px auto;
+  }
+}
+.prof .prof__flexBox .prof__cont .prof__contBox .prof__contTtl, .prof .prof__flexBox .prof__cont .prof__contBox .prof__contTxt {
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+}
+.prof .prof__flexBox .prof__cont .prof__contBox .prof__contTtl {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.prof .prof__flexBox .prof__cont .prof__contBox .prof__contTxt {
+  font-weight: lighter;
+  font-feature-settings: "palt";
+  line-height: 2;
+  letter-spacing: 1.5px;
+}
+.prof .prof__flexBox .fadeIn__left {
+  opacity: 1;
+  transform: translateY(0);
+}
+.prof .prof__flexBox .fadeIn__bottom {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skill {
+  margin-bottom: 150px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .skill {
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .skill {
+    margin-bottom: 80px;
+  }
+}
+.skill .skill__ttl {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+  text-align: center;
+}
+@media (min-width: 1025px) {
+  .skill .skill__ttl {
+    text-align: right;
+    transform: translateX(50px);
+  }
+}
+.skill .fadeIn__left {
+  opacity: 1;
+  transform: translateY(0);
+}
+.skill .fadeIn__bottom {
+  opacity: 1;
+  transform: translateX(0);
+}
+.skill .charts {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.skill .charts .chart {
+  width: 30%;
+}
+
+.logo {
+  margin-bottom: 150px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .logo {
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .logo {
+    margin-bottom: 80px;
+  }
+}
+.logo .logo__ttl {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+.logo .logo__img {
+  width: 40%;
+  margin: 0 auto 40px auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+.logo .logo__img img {
+  width: 100%;
+  height: 280px;
+}
+.logo .logo__msg {
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+  width: 63%;
+  margin: 0 auto;
+  line-height: 2;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+.logo .fadeIn__bottom {
+  opacity: 1;
+  transform: translateX(0);
+}/*# sourceMappingURL=style.css.map */

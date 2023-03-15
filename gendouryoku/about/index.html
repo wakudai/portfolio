@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原動力 | 和久井 大輔について</title>
+    <meta name="description" content="デザインを通して、あなたの夢や挑戦のきっかけを創ります。 | Webデザイナー 和久井大輔のポートフォリオサイト">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__wrap">
+            <h1 class="header__logo">
+                <a href="/">
+                    <img src="../images/img_logo.svg" alt="原動力" class="header__logoImg">
+                </a>
+            </h1>
+            <div class="header__humBtn">
+                <span class="header__humBtn--line"></span>
+                <span class="header__humBtn--line"></span>
+                <span class="header__humBtn--line"></span>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__navList">
+                    <li class="header__navItem"><a href="#">TOP</a></li>
+                    <li class="header__navItem"><a href="#">ABOUT</a></li>
+                    <li class="header__navItem"><a href="#">WORKS</a></li>
+                    <li class="header__navItem"><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="mv">
+            <div class="mv__imgBox">
+                <div class="mv__img--bg">
+                    <img src="../about/images/img_bg.jpg" alt="">
+                </div>
+                <div class="mv__img--main">
+                    <img src="../about/images/img_about.jpg" alt="">
+                </div>
+            </div>
+            <div class="mv__cont">
+                <h1 class="mv__pageTtl">ABOUT</h1>
+                <p class="mv__page--subTtl">和久井 大輔について</p>
+            </div>
+        </div>
+        <section class="prof sect" id="prof">
+            <div class="prof__wrap sect__wrap">
+                <div class="prof__flexBox">
+                    <picture class="prof__img" id="js_prof_img">
+                        <source srcset="./images/img_profile.jpg" media="(max-width: 1024px)">
+                        <img src="./images/img_prof.jpg" alt="和久井 大輔">
+                    </picture>
+                    <div class="prof__cont">
+                        <h2 class="prof__name">和久井 大輔 / <span class="romaji">Daisuke Wakui</span>
+                            <span class="prof__date-of-birth">1998年11月生まれ（24歳）</span>
+                        </h2>
+                        <div class="prof__contBox">
+                            <p class="prof__contTtl">略歴</p>
+                            <p class="prof__contTxt">
+                                私は2021年11月に現職のSES企業に入社後、Webサイト制作に携わり、主にデザインやコーディングを担当。<br>
+                                新規開業された企業様のコーポレートサイトや自社のコーポレートサイトの制作を行っている。
+                            </p>
+                        </div>
+                        <div class="prof__contBox">
+                            <p class="prof__contTtl">Webデザイナーを目指したきっかけ</p>
+                            <p class="prof__contTxt">
+                                私は人に影響を与え、人の役に立つような仕事に携わりたいと思ったのがきっかけでwebデザイナーを目指すようになった。そのワケは、日々の生活でWebサイトやWebサービスを利用する中で、その仕組みに興味を持ち、自分で作ってみたいと思うように。また、パソコン一台で価値のあるサービスを生み出せることにロマンを感じたからである。
+                            </p>
+                        </div>
+                        <div class="prof__contBox">
+                            <p class="prof__contTtl">将来像</p>
+                            <p class="prof__contTxt">
+                                将来は、デザイナーとしてスポーツ業界に携わりたいと考えている。私は学生時代、野球、水泳、バスケと様々なスポーツを経験させてもらった。<br>
+                                この経験のおかげでたくさんの仲間やライバル、恩師と出会うことができた。<br>
+                                この恩返しとして、私のデザインで一人でも多くの子供たちが、夢や目標に挑戦する背中を押してあげたい。
+                            </p>
+                        </div>
+                        <div class="prof__contBox">
+                            <p class="prof__contTtl">趣味</p>
+                            <p class="prof__contTxt">野球・旅行・料理</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="skill sect" id="slill">
+            <div class="skill__wrap sect__wrap">
+                <h2 class="skill__ttl sect__ttl" id="js_skill_ttl">SKILL</h2>
+                <div class="charts">
+                    <div class="chart _chart0">
+                        <div class="chart-main">
+                            <canvas id="chart0"></canvas>
+                            <p class="chart-txt"><span class="chart-number"></span><span
+                                    class="chart-percentage">%</span></p>
+                        </div>
+                    </div>
+                    <div class="chart _chart1">
+                        <div class="chart-main">
+                            <canvas id="chart1"></canvas>
+                            <p class="chart-txt"><span class="chart-number"></span><span
+                                    class="chart-percentage">%</span></p>
+                        </div>
+                    </div>
+                    <div class="chart _chart2">
+                        <div class="chart-main">
+                            <canvas id="chart2"></canvas>
+                            <p class="chart-txt"><span class="chart-number"></span><span
+                                    class="chart-percentage">%</span></p>
+                        </div>
+                    </div>
+                    <div class="chart _chart3">
+                        <div class="chart-main">
+                            <canvas id="chart3"></canvas>
+                            <p class="chart-txt"><span class="chart-number"></span><span
+                                    class="chart-percentage">%</span></p>
+                        </div>
+                    </div>
+                    <div class="chart _chart4">
+                        <div class="chart-main">
+                            <canvas id="chart4"></canvas>
+                            <p class="chart-txt"><span class="chart-number"></span><span
+                                    class="chart-percentage">%</span></p>
+                        </div>
+                    </div>
+                    <div class="chart _chart5">
+                        <div class="chart-main">
+                            <canvas id="chart5"></canvas>
+                            <p class="chart-txt"><span class="chart-number"></span><span
+                                    class="chart-percentage">%</span></p>
+                        </div>
+                    </div>
+                    <div class="chart _chart6">
+                        <div class="chart-main">
+                            <canvas id="chart6"></canvas>
+                            <p class="chart-txt"><span class="chart-number"></span><span
+                                    class="chart-percentage">%</span></p>
+                        </div>
+                    </div>
+                    <div class="chart _chart7">
+                        <div class="chart-main">
+                            <canvas id="chart7"></canvas>
+                            <p class="chart-txt"><span class="chart-number"></span><span
+                                    class="chart-percentage">%</span></p>
+                        </div>
+                    </div>
+                    <div class="chart _chart8">
+                        <div class="chart-main">
+                            <canvas id="chart8"></canvas>
+                            <p class="chart-txt"><span class="chart-number"></span><span
+                                    class="chart-percentage">%</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="logo sect" id="logo">
+            <div class="logo__wrap sect__wrap">
+                <h2 class="logo__ttl sect__ttl" id="js_logo_ttl">LOGO</h2>
+                <div class="logo__img" id="js_logo_img">
+                    <img src="../images/img_logo.svg" alt="原動力">
+                </div>
+                <p class="logo__msg" id="js_logo_msg">
+                    中心の輪で原動力を表現し、そこから夢や目標に挑戦する様子を描いている。<br>
+                    原動力とは、「活動をする元となる力」のことであり、私は、デザインとは人の原動力を掻き立てるものだと考える。<br>
+                    そして、私はデザインを通して子ども達の夢や目標に挑戦する背中を押してあげたい。その気持ちから成り立っている。
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrap">
+            <div class="footer__logo">
+                <img src="./images/img_logo.svg" alt="原動力" class="footer__logoImg">
+            </div>
+            <div class="footer__txtArea">
+                <dl>
+                    <dt>SERVICE</dt>
+                    <dd>Web design / coding / banner design</dd>
+                </dl>
+                <dl>
+                    <dt>CONTACT</dt>
+                    <dd>ご依頼、ご相談のある方は下記ボタンをクリック</dd>
+                </dl>
+            </div>
+            <div class="footer_contBtn">
+                <a href=""><span class="material-symbols-outlined">mail</span>お問い合わせ</a>
+            </div>
+            <div class="footer__instIco">
+                <a href="">
+                    <img src="./images/icon_instagram.svg" alt="Instagram">
+                </a>
+            </div>
+        </div>
+        <p class="footer__cp"><small>©gendohyoku 2023. All rights reserved.</small></p>
+    </footer>
+
+    <script defer>
+        window.addEventListener("load", function () {
+            // ハンバーガーメニュー
+            $(function () {
+                $('.header__humBtn, .header__nav').on('click', function () {
+                    $('.header__humBtn').toggleClass('open');
+                    $('.header__nav').fadeToggle();
+                })
+            })
+        });
+
+        /* スクロールで横からフェードイン、下からフェードイン */
+        $(function () {
+            $(window).scroll(function () {
+                var windowHeight = $(window).height();
+                var scroll = $(window).scrollTop();
+
+                if (window.matchMedia("(max-width: 1024px)").matches) {
+                    $(("#js_prof_img")).each(function () {
+                        const targetPosition = $(this).offset().top;
+                        if (scroll > targetPosition - windowHeight + 100) {
+                            $(this).addClass("fadeIn__bottom");
+                        }
+                    });
+                } else {
+                    $(("#js_prof_img")).each(function () {
+                        const targetPosition = $(this).offset().top;
+                        if (scroll > targetPosition - windowHeight + 100) {
+                            $(this).addClass("fadeIn__right");
+                        }
+                    });
+                }
+
+                if (window.matchMedia("(max-width: 1024px)").matches) {
+                    $((".prof__cont, #js_skill_ttl")).each(function () {
+                        const targetPosition = $(this).offset().top;
+                        if (scroll > targetPosition - windowHeight + 100) {
+                            $(this).addClass("fadeIn__bottom");
+                        }
+                    });
+                } else {
+                    $((".prof__cont, #js_skill_ttl")).each(function () {
+                        const targetPosition = $(this).offset().top;
+                        if (scroll > targetPosition - windowHeight + 100) {
+                            $(this).addClass("fadeIn__left");
+                        }
+                    });
+                }
+
+                $(("#js_logo_ttl, #js_logo_img, #js_logo_msg")).each(function () {
+                    const targetPosition = $(this).offset().top;
+                    if (scroll > targetPosition - windowHeight + 100) {
+                        $(this).addClass("fadeIn__bottom");
+                    }
+                });
+            });
+        });
+
+        "use strict";
+        const makeChart = (chartIndex, maximunPercentage) => {
+            const data = {
+                datasets: [{
+                    data: [75, 25],
+                    backgroundColor: ["#f59b00", "#ffffff"],
+                    cutout: '80%'
+                }]
+            };
+            const ctx = document.querySelector(`#chart${chartIndex}`);
+            ctx.style.filter = `hue-rotate(${30 / 360 * chartIndex * 100}deg)`;
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: data
+            });
+            appearElement(chartIndex);
+            countupPercentage(chartIndex, maximunPercentage);
+        };
+        const appearElement = (chartIndex) => {
+            var _a;
+            (_a = document.querySelector(`.chart._chart${chartIndex}`)) === null || _a === void 0 ? void 0 : _a.classList.add('appear');
+        };
+        const countupPercentage = (chartIndex, maximunPercentage) => {
+            let num = 0;
+            const countupSpeed = 8;
+            const percentageDOM = document.querySelector(`.chart._chart${chartIndex} .chart-number`);
+            setInterval(() => {
+                if (num <= maximunPercentage) {
+                    percentageDOM.innerText = String(num);
+                    num++;
+                }
+            }, countupSpeed);
+        };
+        const delayCoef = 300;
+        const chartNum = 9;
+        const maximunPercentages = [];
+        for (let i = 0; i < chartNum; i++) {
+            maximunPercentages.push(Math.floor(Math.random() * 50 + 50));
+        }
+        let currentIndex = 0;
+        let observer = new IntersectionObserver(entries => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const delay = index * delayCoef;
+                    setTimeout(() => {
+                        if (currentIndex > chartNum - 1) {
+                            return;
+                        }
+                        makeChart(currentIndex, maximunPercentages[currentIndex]);
+                        currentIndex++;
+                        if (currentIndex >= chartNum) {
+                            const arrow = document.querySelector('.scrollDown');
+                            arrow === null || arrow === void 0 ? void 0 : arrow.classList.remove('appear');
+                        }
+                    }, delay);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px 0px',
+            threshold: 0.4
+        });
+        let targets = document.querySelectorAll('.chart');
+        targets.forEach(target => {
+            observer.observe(target);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,349 @@
+//カラー
+$accent-color: #f59b00;
+$white: #fff;
+$gray: #b2b2b2;
+$common-use: #333;
+
+// フォント
+$text-font: 'Noto Sans CJK JP';
+$mv-en-font: 'STIX Two Text';
+$mv-ja-font: 游明朝体;
+$section-ttl-font: Didot;
+
+// メディアクエリ
+$pc: 1025px;
+$tb-max: 1024px;
+$tb-min: 768px;
+$sp: 767px;
+
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tb {
+    @media (min-width: ($tb-min)) and (max-width: ($tb-max)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+
+
+// メインビジュアル
+.mv {
+    width: 100vw;
+
+    .mv__img--bg {
+        clip-path: polygon(100% 0, 0 100%, 0 0%);
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .mv__img--main {
+        position: absolute;
+        top: 0%;
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+
+        img {
+            height: 100%;
+            filter: saturate(0);
+            transition: 0.3s;
+
+            &:hover {
+                filter: saturate(1);
+            }
+        }
+    }
+
+    .mv__cont {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 10px;
+
+        .mv__pageTtl {
+            position: absolute;
+            top: 45%;
+            left: 25%;
+            font-size: 12rem;
+            font-family: $section-ttl-font;
+            color: $white;
+            font-style: italic;
+
+            @include tb {
+                font-size: 8rem;
+                top: 18%;
+            };
+
+            @include sp {
+                font-size: 4rem;
+                top: 14%;
+                left: 13%;
+            };
+        }
+
+        .mv__page--subTtl {
+            position: absolute;
+            top: 63%;
+            left: 24%;
+            font-size: 1.6rem;
+            font-family:$text-font;
+            color: $white;
+
+            @include tb {
+                top: 25%;
+                left: 24%;
+            };
+
+            @include sp {
+                font-size: 1.3rem;
+                top: 21%;
+                left: 12%;
+            };
+        }
+    }
+}
+
+// 自己紹介エリア
+.prof {
+    margin: 150px 0;
+
+    @include tb {
+        margin: 100px 0;
+    };
+
+    @include sp {
+        margin: 80px 0;
+    };
+
+    .prof__flexBox {
+
+        @include pc {
+            display: flex;
+            justify-content: space-between;
+        };
+
+        .prof__img {
+            filter: saturate(0);
+            transition: 0.3s;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, visibility 1s, transform 1s;
+
+            @include pc {
+                width: 38%;
+                transform: translateX(-50px);
+            };
+
+            &:hover {
+                filter: saturate(1);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .fadeIn__right {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fadeIn__bottom {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .prof__cont {
+            opacity: 0;
+            margin-top: 80px;
+            color: $common-use;
+            transform: translateY(50px);
+            transition: opacity 1s, visibility 1s, transform 1s;
+
+            @include pc {
+                width: 56.5%;
+                margin: 0;
+                transform: translateX(50px);
+            };
+
+            .prof__name {
+                margin-bottom: 50px;
+                font-size: 2.4rem;
+                border-bottom: solid 1px $common-use;
+                width: 93%;
+                padding-bottom: 10px;
+                font-family: $text-font;
+
+                @include tb {
+                    width: 53%;
+                    margin: 0 auto 40px auto;
+                };
+
+                @include sp {
+                    width: 75%;
+                    margin: 0 auto 40px auto;
+                    font-size: 2rem;
+                    text-align: center;
+                };
+
+                .romaji {
+                    font-family: $section-ttl-font;
+                }
+
+                .prof__date-of-birth {
+                    font-size: 1.6rem;
+                    font-family: $text-font;
+                }
+            }
+
+            .prof__contBox {
+                margin-bottom: 50px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                @include tb {
+                    width: 90%;
+                    margin: 0 auto 50px auto;
+                };
+
+                @include sp {
+                    width: 75%;
+                    margin: 0 auto 50px auto;
+                };
+
+                .prof__contTtl, .prof__contTxt {
+                    font-size: 1.6rem;
+                    font-family: $text-font;
+                }
+
+                .prof__contTtl {
+                    font-weight: bold;
+                    margin-bottom: 16px;
+                }
+
+                .prof__contTxt {
+                    font-weight: lighter;
+                    font-feature-settings: "palt";
+                    line-height: 2;
+                    letter-spacing: 1.5px;
+                }
+            }
+        }
+
+        .fadeIn__left {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fadeIn__bottom {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+// スキル
+.skill {
+    margin-bottom: 150px;
+
+    @include tb {
+        margin-bottom: 100px;
+    };
+
+    @include sp {
+        margin-bottom: 80px;
+    };
+
+    .skill__ttl {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+        text-align: center;
+
+        @include pc {
+        text-align: right;
+        transform: translateX(50px);
+        };
+    }
+
+    .fadeIn__left {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fadeIn__bottom {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .charts {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .chart {
+            width: 30%;
+        }
+    }
+}
+
+// ロゴ
+.logo {
+    margin-bottom: 150px;
+
+    @include tb {
+        margin-bottom: 100px;
+    };
+
+    @include sp {
+        margin-bottom: 80px;
+    };
+
+    .logo__ttl {
+        text-align: center;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+    }
+
+    .logo__img {
+        width: 40%;
+        margin: 0 auto 40px auto;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+
+        img {
+            width: 100%;
+            height: 280px;
+        }
+    }
+
+    .logo__msg {
+        font-size: 1.6rem;
+        font-family: $text-font;
+        width: 63%;
+        margin: 0 auto;
+        line-height: 2;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+    }
+
+    .fadeIn__bottom {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
