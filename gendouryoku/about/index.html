@@ -41,7 +41,7 @@
         <div class="mv">
             <div class="mv__imgBox">
                 <div class="mv__img--bg">
-                    <img src="../about/images/img_bg.jpg" alt="">
+                    <img src="../images/img_bg.jpg" alt="">
                 </div>
                 <div class="mv__img--main">
                     <img src="../about/images/img_about.jpg" alt="">
@@ -95,69 +95,62 @@
         <section class="skill sect" id="slill">
             <div class="skill__wrap sect__wrap">
                 <h2 class="skill__ttl sect__ttl" id="js_skill_ttl">SKILL</h2>
-                <div class="charts">
-                    <div class="chart _chart0">
-                        <div class="chart-main">
-                            <canvas id="chart0"></canvas>
-                            <p class="chart-txt"><span class="chart-number"></span><span
-                                    class="chart-percentage">%</span></p>
-                        </div>
+                <div class="skill__chart">
+                    <div class="skill__chartItem">
+                        <canvas id="ps"></canvas>
+                        <picture class="skill__toolIcon ps">
+                            <img src="./images/img_photoshop.svg" alt="Photoshop">
+                        </picture>
+                        <p class="skill__toolName">Photoshop</p>
                     </div>
-                    <div class="chart _chart1">
-                        <div class="chart-main">
-                            <canvas id="chart1"></canvas>
-                            <p class="chart-txt"><span class="chart-number"></span><span
-                                    class="chart-percentage">%</span></p>
-                        </div>
+                    <div class="skill__chartItem">
+                        <canvas id="ill"></canvas>
+                        <picture class="skill__toolIcon ill">
+                            <img src="./images/img_illustrator.svg" alt="Illustrator">
+                        </picture>
+                        <p class="skill__toolName">Illustrator</p>
                     </div>
-                    <div class="chart _chart2">
-                        <div class="chart-main">
-                            <canvas id="chart2"></canvas>
-                            <p class="chart-txt"><span class="chart-number"></span><span
-                                    class="chart-percentage">%</span></p>
-                        </div>
+                    <div class="skill__chartItem">
+                        <canvas id="xd"></canvas>
+                        <picture class="skill__toolIcon xd">
+                            <img src="./images/img_xd.svg" alt="Adobe XD">
+                        </picture>
+                        <p class="skill__toolName">Adobe XD</p>
                     </div>
-                    <div class="chart _chart3">
-                        <div class="chart-main">
-                            <canvas id="chart3"></canvas>
-                            <p class="chart-txt"><span class="chart-number"></span><span
-                                    class="chart-percentage">%</span></p>
-                        </div>
+                    <div class="skill__chartItem">
+                        <canvas id="html"></canvas>
+                        <picture class="skill__toolIcon html">
+                            <img src="./images/img_html5.svg" alt="HTML">
+                        </picture>
+                        <p class="skill__toolName">HTML</p>
                     </div>
-                    <div class="chart _chart4">
-                        <div class="chart-main">
-                            <canvas id="chart4"></canvas>
-                            <p class="chart-txt"><span class="chart-number"></span><span
-                                    class="chart-percentage">%</span></p>
-                        </div>
+                    <div class="skill__chartItem">
+                        <canvas id="css"></canvas>
+                        <picture class="skill__toolIcon css">
+                            <img src="./images/img_css.svg" alt="CSS">
+                        </picture>
+                        <p class="skill__toolName">CSS</p>
                     </div>
-                    <div class="chart _chart5">
-                        <div class="chart-main">
-                            <canvas id="chart5"></canvas>
-                            <p class="chart-txt"><span class="chart-number"></span><span
-                                    class="chart-percentage">%</span></p>
-                        </div>
+                    <div class="skill__chartItem">
+                        <canvas id="js"></canvas>
+                        <picture class="skill__toolIcon js">
+                            <img src="./images/img_js.svg" alt="JavaScript">
+                        </picture>
+                        <p class="skill__toolName">JavaScript</p>
                     </div>
-                    <div class="chart _chart6">
-                        <div class="chart-main">
-                            <canvas id="chart6"></canvas>
-                            <p class="chart-txt"><span class="chart-number"></span><span
-                                    class="chart-percentage">%</span></p>
-                        </div>
+                    <div class="skill__chartItem">
+                        <canvas id="jq"></canvas>
+                        <picture class="skill__toolIcon jq">
+                            <img src="./images/img_jquery.svg" alt="jQuery">
+                        </picture>
+                        <p class="skill__toolName">jQuery</p>
                     </div>
-                    <div class="chart _chart7">
-                        <div class="chart-main">
-                            <canvas id="chart7"></canvas>
-                            <p class="chart-txt"><span class="chart-number"></span><span
-                                    class="chart-percentage">%</span></p>
-                        </div>
-                    </div>
-                    <div class="chart _chart8">
-                        <div class="chart-main">
-                            <canvas id="chart8"></canvas>
-                            <p class="chart-txt"><span class="chart-number"></span><span
-                                    class="chart-percentage">%</span></p>
-                        </div>
+                    <div class="skill__chartItem">
+                        <canvas id="wp"></canvas>
+                        <picture class="skill__toolIcon wp">
+                            <img src="./images/img_wp.svg" alt="WordPress">
+                        </picture>
+                        <p class="skill__toolName">WordPress</p>
                     </div>
                 </div>
             </div>
@@ -260,74 +253,8 @@
                 });
             });
         });
-
-        "use strict";
-        const makeChart = (chartIndex, maximunPercentage) => {
-            const data = {
-                datasets: [{
-                    data: [75, 25],
-                    backgroundColor: ["#f59b00", "#ffffff"],
-                    cutout: '80%'
-                }]
-            };
-            const ctx = document.querySelector(`#chart${chartIndex}`);
-            ctx.style.filter = `hue-rotate(${30 / 360 * chartIndex * 100}deg)`;
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: data
-            });
-            appearElement(chartIndex);
-            countupPercentage(chartIndex, maximunPercentage);
-        };
-        const appearElement = (chartIndex) => {
-            var _a;
-            (_a = document.querySelector(`.chart._chart${chartIndex}`)) === null || _a === void 0 ? void 0 : _a.classList.add('appear');
-        };
-        const countupPercentage = (chartIndex, maximunPercentage) => {
-            let num = 0;
-            const countupSpeed = 8;
-            const percentageDOM = document.querySelector(`.chart._chart${chartIndex} .chart-number`);
-            setInterval(() => {
-                if (num <= maximunPercentage) {
-                    percentageDOM.innerText = String(num);
-                    num++;
-                }
-            }, countupSpeed);
-        };
-        const delayCoef = 300;
-        const chartNum = 9;
-        const maximunPercentages = [];
-        for (let i = 0; i < chartNum; i++) {
-            maximunPercentages.push(Math.floor(Math.random() * 50 + 50));
-        }
-        let currentIndex = 0;
-        let observer = new IntersectionObserver(entries => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    const delay = index * delayCoef;
-                    setTimeout(() => {
-                        if (currentIndex > chartNum - 1) {
-                            return;
-                        }
-                        makeChart(currentIndex, maximunPercentages[currentIndex]);
-                        currentIndex++;
-                        if (currentIndex >= chartNum) {
-                            const arrow = document.querySelector('.scrollDown');
-                            arrow === null || arrow === void 0 ? void 0 : arrow.classList.remove('appear');
-                        }
-                    }, delay);
-                }
-            });
-        }, {
-            root: null,
-            rootMargin: '0px 0px',
-            threshold: 0.4
-        });
-        let targets = document.querySelectorAll('.chart');
-        targets.forEach(target => {
-            observer.observe(target);
-        });
     </script>
+    <script src="./js/skill.js"></script>
 </body>
 
 </html>

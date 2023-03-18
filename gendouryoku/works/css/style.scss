@@ -93,7 +93,7 @@ $sp: 767px;
         .mv__page--subTtl {
             position: absolute;
             top: 63%;
-            left: 24%;
+            left: 26%;
             font-size: 1.6rem;
             font-family:$text-font;
             color: $white;
@@ -112,8 +112,8 @@ $sp: 767px;
     }
 }
 
-// 自己紹介エリア
-.prof {
+// Webデザイン
+.webdesign {
     margin: 150px 0;
 
     @include tb {
@@ -124,157 +124,13 @@ $sp: 767px;
         margin: 80px 0;
     };
 
-    .prof__flexBox {
-
-        @include pc {
-            display: flex;
-            justify-content: space-between;
-        };
-
-        .prof__img {
-            filter: saturate(0);
-            transition: 0.3s;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s, visibility 1s, transform 1s;
-
-            @include pc {
-                width: 38%;
-                transform: translateX(-50px);
-            };
-
-            &:hover {
-                filter: saturate(1);
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        .fadeIn__right {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fadeIn__bottom {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .prof__cont {
-            opacity: 0;
-            margin-top: 80px;
-            color: $common-use;
-            transform: translateY(50px);
-            transition: opacity 1s, visibility 1s, transform 1s;
-
-            @include pc {
-                width: 56.5%;
-                margin: 0;
-                transform: translateX(50px);
-            };
-
-            .prof__name {
-                margin-bottom: 50px;
-                font-size: 2.4rem;
-                border-bottom: solid 1px $common-use;
-                width: 93%;
-                padding-bottom: 10px;
-                font-family: $text-font;
-
-                @include tb {
-                    width: 53%;
-                    margin: 0 auto 40px auto;
-                };
-
-                @include sp {
-                    width: 75%;
-                    margin: 0 auto 40px auto;
-                    font-size: 2rem;
-                    text-align: center;
-                };
-
-                .romaji {
-                    font-family: $section-ttl-font;
-                }
-
-                .prof__date-of-birth {
-                    font-size: 1.6rem;
-                    font-family: $text-font;
-                }
-            }
-
-            .prof__contBox {
-                margin-bottom: 50px;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-
-                @include tb {
-                    width: 90%;
-                    margin: 0 auto 50px auto;
-                };
-
-                @include sp {
-                    width: 90%;
-                    margin: 0 auto 50px auto;
-                };
-
-                .prof__contTtl, .prof__contTxt {
-                    font-size: 1.6rem;
-                    font-family: $text-font;
-                }
-
-                .prof__contTtl {
-                    font-weight: bold;
-                    margin-bottom: 16px;
-                }
-
-                .prof__contTxt {
-                    font-weight: lighter;
-                    font-feature-settings: "palt";
-                    line-height: 2;
-                    letter-spacing: 1.5px;
-                }
-            }
-        }
-
-        .fadeIn__left {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fadeIn__bottom {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-}
-
-// スキル
-.skill {
-    margin-bottom: 150px;
-
-    @include tb {
-        margin-bottom: 100px;
-    };
-
-    @include sp {
-        margin-bottom: 80px;
-    };
-
-    .skill__ttl {
+    .webdesign__ttl {
         opacity: 0;
         transform: translateY(50px);
         transition: opacity 1s, visibility 1s, transform 1s;
-        text-align: center;
 
         @include pc {
-        text-align: right;
-        transform: translateX(50px);
+            transform: translateX(-50px);
         };
     }
 
@@ -288,58 +144,110 @@ $sp: 767px;
         transform: translateX(0);
     }
 
-    .skill__chart {
-        display: flex;
-        gap: 5%;
-        flex-wrap: wrap;
+    .webdesign__flexBox {
 
-        @include sp {
-            gap: unset
+        @include pc {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap
         };
 
-        .skill__chartItem {
-            width: 30%;
+        .webdesign__img {
             margin-bottom: 40px;
-            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, visibility 1s, transform 1s;
 
-            @include sp {
-                width: 50%;
+            @include pc {
+                width: 48%;
             };
 
-            .skill__toolIcon {
-                position: absolute;
-                width: 30%;
-                left: 35%;
-                opacity: 0;
-                transform: translateY(50px);
-                transition: opacity 1s, visibility 1s, transform 1s;
-            }
-
-            .fadeIn__bottom {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            .ps, .ill, .xd {
-                top: 33%;
-            }
-
-            .html, .css, .js {
-                top: 28%;
-            }
-
-            .jq, .wp {
-                top: 32%;
-            }
-
-            .skill__toolName {
-                text-align: center;
+            .webdesign__img-dtl {
+                margin-top: 20px;
                 font-size: 1.6rem;
-                color: $common-use;
                 font-family: $text-font;
-                font-weight: bold;
-                margin-top: 16px;
+                color: $common-use;
+
+                @include sp {
+                    margin-top: 10px;
+                };
             }
+        }
+
+        .fadeIn__bottom {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+// スキル
+.banner {
+    margin-bottom: 150px;
+
+    @include tb {
+        margin-bottom: 100px;
+    };
+
+    @include sp {
+        margin-bottom: 80px;
+    };
+
+    .banner__ttl {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+        text-align: center;
+
+        @include pc {
+        text-align: right;
+        transform: translateX(50px);
+        };
+    }
+
+    .fadeIn__right {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fadeIn__bottom {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .banner__flexBox {
+
+        @include pc {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap
+        };
+
+        .banner__img {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, visibility 1s, transform 1s;
+
+            @include pc {
+                width: 48%;
+            };
+
+            .banner__img-dtl {
+                margin-top: 20px;
+                font-size: 1.6rem;
+                font-family: $text-font;
+                color: $common-use;
+
+                @include sp {
+                    margin-top: 10px;
+                };
+            }
+        }
+
+        .fadeIn__bottom {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
 }
@@ -370,10 +278,6 @@ $sp: 767px;
         transform: translateY(50px);
         transition: opacity 1s, visibility 1s, transform 1s;
 
-        @include sp {
-            width: 53%;
-        };
-
         img {
             width: 100%;
             height: 280px;
@@ -389,10 +293,6 @@ $sp: 767px;
         opacity: 0;
         transform: translateY(50px);
         transition: opacity 1s, visibility 1s, transform 1s;
-
-        @include sp {
-            width: 90%;
-        };
     }
 
     .fadeIn__bottom {
