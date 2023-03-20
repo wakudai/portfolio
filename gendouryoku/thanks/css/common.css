@@ -199,7 +199,7 @@ img {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url(../images/img_bg.jpg);
+  background-image: url(../../images/img_bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -216,20 +216,9 @@ img {
 }
 .header .header__wrap .header__nav .header__navList .header__navItem {
   padding: 40px 0;
-}
-.header .header__wrap .header__nav .header__navList .header__navItem a {
   color: #f59b00;
   font-size: 2.5rem;
   font-family: "Noto Sans CJK JP";
-}
-.header .header__wrap .header__nav .header__navList .header__navItem a .after__hover {
-  display: none;
-}
-.header .header__wrap .header__nav .header__navList .header__navItem a .after__hover:hover {
-  display: inline;
-}
-.header .header__wrap .header__nav .header__navList .header__navItem a .before__hover:hover {
-  display: none;
 }
 
 .sect__wrap {
@@ -259,7 +248,7 @@ img {
 }
 
 .footer {
-  background-image: url(../images/img_bg.jpg);
+  background-image: url(../../images/img_bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

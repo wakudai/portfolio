@@ -1,0 +1,339 @@
+//カラー
+$accent-color: #f59b00;
+$white: #fff;
+$gray: #b2b2b2;
+$common-use: #333;
+
+// フォント
+$text-font: 'Noto Sans CJK JP';
+$mv-en-font: 'STIX Two Text';
+$mv-ja-font: 游明朝体;
+$section-ttl-font: Didot;
+
+// メディアクエリ
+$pc: 1025px;
+$tb-max: 1024px;
+$tb-min: 768px;
+$sp: 767px;
+
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tb {
+    @media (min-width: ($tb-min)) and (max-width: ($tb-max)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+
+
+// メインビジュアル
+.mv {
+    width: 100vw;
+
+    .mv__img--bg {
+        clip-path: polygon(100% 0, 0 100%, 0 0%);
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .mv__img--main {
+        position: absolute;
+        top: 0%;
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+
+        img {
+            height: 100%;
+            filter: saturate(0);
+            transition: 0.3s;
+
+            &:hover {
+                filter: saturate(1);
+            }
+        }
+    }
+
+    .mv__cont {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 10px;
+
+        .mv__pageTtl {
+            position: absolute;
+            top: 45%;
+            left: 25%;
+            font-size: 12rem;
+            font-family: $section-ttl-font;
+            color: $white;
+            font-style: italic;
+
+            @include tb {
+                font-size: 8rem;
+                top: 18%;
+            };
+
+            @include sp {
+                font-size: 4rem;
+                top: 14%;
+                left: 13%;
+            };
+        }
+
+        .mv__page--subTtl {
+            position: absolute;
+            top: 63%;
+            left: 26%;
+            font-size: 1.6rem;
+            font-family:$text-font;
+            color: $white;
+
+            @include tb {
+                top: 25%;
+                left: 24%;
+            };
+
+            @include sp {
+                font-size: 1.3rem;
+                top: 21%;
+                left: 12%;
+            };
+        }
+    }
+}
+
+// Webデザイン
+.contact {
+    margin: 150px 0;
+
+    @include tb {
+        margin: 100px 0;
+    };
+
+    @include sp {
+        margin: 80px 0;
+    };
+
+    .contact__text {
+        font-size: 1.6rem;
+        color: $common-use;
+        font-family: $text-font;
+        text-align: center;
+        margin-bottom: 40px;
+
+        @include sp {
+            font-size: 1.3rem;
+        };
+    }
+
+    .contact__form {
+        max-width: 1000px;
+        margin: 0 auto;
+
+        .form {
+            width: 50%;
+            margin: 0 auto;
+
+            @include sp {
+                width: 90%
+            };
+
+            .form__item {
+                margin-bottom: 40px;
+
+                .form__label {
+                    font-size: 1.6rem;
+                    color: $common-use;
+                    font-family: $text-font;
+                    margin-bottom: 20px;
+
+                    .form__required {
+                        background-color: $accent-color;
+                        padding: 3px 15px;
+                        margin-left: 10px;
+                        color: $white;
+                    }
+                }
+
+                .form__input, .form__textarea {
+                    width: 100%;
+                    background-color: #e6e6e6;
+                    border: none;
+                    padding: 5px 10px;
+                }
+
+                .form__input {
+                    height: 50px;
+
+                    @include sp {
+                        width: 90%
+                    };
+                }
+
+                .form__textarea {
+                    height: 20vh;
+                }
+
+                .form__error {
+                    display: none;
+                    margin-top: 5px;
+                    color: #cc1c0c;
+                }
+
+                .form__input:invalid:focus + .form__error {
+                    display: block;
+                }
+            }
+
+            .form__btn {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                margin: auto;
+                padding: 10px 20px;
+                border: 2px solid $common-use;
+                color: $common-use;
+                transition: 0.5s;
+                font-size: 16px;
+                width: 64%;
+                background-color: #f2f2f2;
+                border-radius: 50px;
+            }
+
+            .form__btn:hover {
+                color: $white;
+                background: $common-use;
+            }
+        }
+    }
+}
+
+// スキル
+.banner {
+    margin-bottom: 150px;
+
+    @include tb {
+        margin-bottom: 100px;
+    };
+
+    @include sp {
+        margin-bottom: 80px;
+    };
+
+    .banner__ttl {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+        text-align: center;
+
+        @include pc {
+        text-align: right;
+        transform: translateX(50px);
+        };
+    }
+
+    .fadeIn__right {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fadeIn__bottom {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .banner__flexBox {
+
+        @include pc {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap
+        };
+
+        .banner__img {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, visibility 1s, transform 1s;
+
+            @include pc {
+                width: 48%;
+            };
+
+            .banner__img-dtl {
+                margin-top: 20px;
+                font-size: 1.6rem;
+                font-family: $text-font;
+                color: $common-use;
+
+                @include sp {
+                    margin-top: 10px;
+                };
+            }
+        }
+
+        .fadeIn__bottom {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+// ロゴ
+.logo {
+    margin-bottom: 150px;
+
+    @include tb {
+        margin-bottom: 100px;
+    };
+
+    @include sp {
+        margin-bottom: 80px;
+    };
+
+    .logo__ttl {
+        text-align: center;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+    }
+
+    .logo__img {
+        width: 40%;
+        margin: 0 auto 40px auto;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+
+        img {
+            width: 100%;
+            height: 280px;
+        }
+    }
+
+    .logo__msg {
+        font-size: 1.6rem;
+        font-family: $text-font;
+        width: 63%;
+        margin: 0 auto;
+        line-height: 2;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s, visibility 1s, transform 1s;
+    }
+
+    .fadeIn__bottom {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,183 @@
+.mv {
+  width: 100vw;
+}
+.mv .mv__img--bg {
+  -webkit-clip-path: polygon(100% 0, 0 100%, 0 0%);
+          clip-path: polygon(100% 0, 0 100%, 0 0%);
+}
+.mv .mv__img--bg img {
+  height: 100%;
+}
+.mv .mv__img--main {
+  position: absolute;
+  top: 0%;
+  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+.mv .mv__img--main img {
+  height: 100%;
+  filter: saturate(0);
+  transition: 0.3s;
+}
+.mv .mv__img--main img:hover {
+  filter: saturate(1);
+}
+.mv .mv__cont {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.mv .mv__cont .mv__pageTtl {
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  font-size: 12rem;
+  font-family: Didot;
+  color: #fff;
+  font-style: italic;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mv .mv__cont .mv__pageTtl {
+    font-size: 8rem;
+    top: 18%;
+  }
+}
+@media (max-width: 767px) {
+  .mv .mv__cont .mv__pageTtl {
+    font-size: 4rem;
+    top: 14%;
+    left: 13%;
+  }
+}
+.mv .mv__cont .mv__page--subTtl {
+  position: absolute;
+  top: 63%;
+  left: 26%;
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+  color: #fff;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mv .mv__cont .mv__page--subTtl {
+    top: 25%;
+    left: 24%;
+  }
+}
+@media (max-width: 767px) {
+  .mv .mv__cont .mv__page--subTtl {
+    font-size: 1.3rem;
+    top: 21%;
+    left: 12%;
+  }
+}
+
+.thanks {
+  margin: 150px 0;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .thanks {
+    margin: 100px 0;
+  }
+}
+@media (max-width: 767px) {
+  .thanks {
+    margin: 80px 0;
+  }
+}
+.thanks .thanks__wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.thanks .thanks__wrap .thanks__ttl {
+  text-align: center;
+  font-size: 4rem;
+  color: #333;
+  font-family: "Noto Sans CJK JP";
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .thanks .thanks__wrap .thanks__ttl {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .thanks .thanks__wrap .thanks__ttl {
+    font-size: 2rem;
+  }
+}
+.thanks .thanks__wrap .thanks__txt {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #333;
+  font-family: "Noto Sans CJK JP";
+  line-height: 2;
+}
+@media (max-width: 767px) {
+  .thanks .thanks__wrap .thanks__txt {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+
+.btn {
+  max-width: 1000px;
+  margin: 0 auto 150px auto;
+  display: flex;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .btn {
+    margin-bottom: 100px;
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .btn {
+    margin-bottom: 80px;
+    display: block;
+    width: 90%;
+  }
+}
+.btn .btn__insta,
+.btn .btn__topBack {
+  width: 40%;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .btn .btn__insta,
+  .btn .btn__topBack {
+    width: 90%;
+  }
+}
+.btn .btn__insta a,
+.btn .btn__topBack a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .btn .btn__insta a,
+  .btn .btn__topBack a {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .btn .btn__insta a,
+  .btn .btn__topBack a {
+    margin-bottom: 30px;
+    width: 80%;
+  }
+}
+.btn .btn__insta a img,
+.btn .btn__topBack a img {
+  width: 5%;
+  margin-right: 10px;
+}
+@media (max-width: 767px) {
+  .btn .btn__insta a img,
+  .btn .btn__topBack a img {
+    width: 10%;
+  }
+}/*# sourceMappingURL=style.css.map */

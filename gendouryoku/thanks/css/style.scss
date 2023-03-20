@@ -1,0 +1,214 @@
+//カラー
+$accent-color: #f59b00;
+$white: #fff;
+$gray: #b2b2b2;
+$common-use: #333;
+
+// フォント
+$text-font: 'Noto Sans CJK JP';
+$mv-en-font: 'STIX Two Text';
+$mv-ja-font: 游明朝体;
+$section-ttl-font: Didot;
+
+// メディアクエリ
+$pc: 1025px;
+$tb-max: 1024px;
+$tb-min: 768px;
+$sp: 767px;
+
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tb {
+    @media (min-width: ($tb-min)) and (max-width: ($tb-max)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+
+
+// メインビジュアル
+.mv {
+    width: 100vw;
+
+    .mv__img--bg {
+        clip-path: polygon(100% 0, 0 100%, 0 0%);
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .mv__img--main {
+        position: absolute;
+        top: 0%;
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+
+        img {
+            height: 100%;
+            filter: saturate(0);
+            transition: 0.3s;
+
+            &:hover {
+                filter: saturate(1);
+            }
+        }
+    }
+
+    .mv__cont {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 10px;
+
+        .mv__pageTtl {
+            position: absolute;
+            top: 45%;
+            left: 25%;
+            font-size: 12rem;
+            font-family: $section-ttl-font;
+            color: $white;
+            font-style: italic;
+
+            @include tb {
+                font-size: 8rem;
+                top: 18%;
+            };
+
+            @include sp {
+                font-size: 4rem;
+                top: 14%;
+                left: 13%;
+            };
+        }
+
+        .mv__page--subTtl {
+            position: absolute;
+            top: 63%;
+            left: 26%;
+            font-size: 1.6rem;
+            font-family:$text-font;
+            color: $white;
+
+            @include tb {
+                top: 25%;
+                left: 24%;
+            };
+
+            @include sp {
+                font-size: 1.3rem;
+                top: 21%;
+                left: 12%;
+            };
+        }
+    }
+}
+
+// Webデザイン
+.thanks {
+    margin: 150px 0;
+
+    @include tb {
+        margin: 100px 0;
+    };
+
+    @include sp {
+        margin: 80px 0;
+    };
+
+    .thanks__wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+
+        .thanks__ttl {
+            text-align: center;
+            font-size: 4rem;
+            color: $common-use;
+            font-family: $text-font;
+            margin-bottom: 40px;
+
+            @include tb {
+                font-size: 2rem;
+            };
+
+            @include sp {
+                font-size: 2rem;
+            };
+        }
+
+        .thanks__txt {
+            text-align: center;
+            font-size: 1.6rem;
+            color: $common-use;
+            font-family: $text-font;
+            line-height: 2;
+
+            @include sp {
+                width: 90%;
+                margin: 0 auto;
+                text-align: left
+            };
+        }
+    }
+}
+
+.btn {
+    max-width: 1000px;
+    margin: 0 auto 150px auto;
+    display: flex;
+
+    @include tb {
+        margin-bottom: 100px;
+        display: block
+    };
+
+    @include sp {
+        margin-bottom: 80px;
+        display: block;
+        width: 90%
+    };
+
+    .btn__insta,
+    .btn__topBack {
+        width: 40%;
+        margin: 0 auto;
+
+        @include sp {
+            width: 90%
+        };
+
+        a {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+
+            @include tb {
+                margin-bottom: 40px;
+            };
+
+            @include sp {
+                margin-bottom: 30px;
+                width: 80%;
+            };
+
+            img {
+                width: 5%;
+                margin-right: 10px;
+
+                @include sp {
+                    width: 10%;
+                };
+            }
+        }
+    }
+}

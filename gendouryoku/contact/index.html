@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原動力 | お問い合わせ</title>
+    <meta name="description" content="デザインを通して、あなたの夢や挑戦のきっかけを創ります。 | Webデザイナー 和久井大輔のポートフォリオサイト">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__wrap">
+            <h1 class="header__logo">
+                <a href="/">
+                    <img src="../images/img_logo.svg" alt="原動力" class="header__logoImg">
+                </a>
+            </h1>
+            <div class="header__humBtn">
+                <span class="header__humBtn--line"></span>
+                <span class="header__humBtn--line"></span>
+                <span class="header__humBtn--line"></span>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__navList">
+                    <li class="header__navItem"><a href="/">TOP</a></li>
+                    <li class="header__navItem"><a href="/about/index.html">ABOUT</a></li>
+                    <li class="header__navItem"><a href="/works/index.html">WORKS</a></li>
+                    <li class="header__navItem"><a href="/contact/index.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="mv">
+            <div class="mv__imgBox">
+                <div class="mv__img--bg">
+                    <img src="../images/img_bg.jpg" alt="背景黒">
+                </div>
+                <div class="mv__img--main">
+                    <img src="./images/img_contact.jpg" alt="お問い合わせ">
+                </div>
+            </div>
+            <div class="mv__cont">
+                <h1 class="mv__pageTtl">CONTACT</h1>
+                <p class="mv__page--subTtl">お問い合わせ</p>
+            </div>
+        </div>
+        <div class="contact sect" id="contact">
+            <p class="contact__text">制作のご依頼やご相談などお気軽にお問い合わせください。</p>
+            <div class="contact__form">
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"
+                    onload="if(submitted) {window.location = '../thanks/index.html';}"></iframe>
+                <form
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfLqNQbZDZ2yXuo2a7yc7HI35ZiLn8ogTXipsFKh8W4lN84iQ/formResponse"
+                    class="form" method="post" target="hidden_iframe" onsubmit="submitted = true;">
+                    <div class="form__item">
+                        <p class="form__label">
+                            <label>お名前</label>
+                            <span class="form__required">必須</span>
+                        </p>
+                        <input type="text" class="form__input" required name="entry.1210466824" placeholder="和久井 大輔" />
+                        <div class="form__error">
+                            必須項目です入力してください
+                        </div>
+                    </div>
+                    <div class="form__item">
+                        <p class="form__label">
+                            <label>フリガナ</label>
+                            <span class="form__required">必須</span>
+                        </p>
+                        <input type="text" class="form__input" required name="entry.714076464" placeholder="ワクイ ダイスケ" />
+                        <div class="form__error">
+                            必須項目です入力してください
+                        </div>
+                    </div>
+                    <div class="form__item">
+                        <p class="form__label">
+                            <label>メールアドレス</label>
+                            <span class="form__required">必須</span>
+                        </p>
+                        <input type="text" class="form__input" required name="entry.443706575"
+                            placeholder="sample.co.jp" />
+                        <div class="form__error">
+                            必須項目です入力してください
+                        </div>
+                    </div>
+                    <div class="form__item">
+                        <p class="form__label isMsg">
+                            <label>お問い合わせ内容</label>
+                            <span class="form__required">必須</span>
+                        </p>
+                        <textarea class="form__textarea" required name="entry.1857601746"
+                            placeholder="メッセージをご入力ください"></textarea>
+                        <div class="form__error">
+                            必須項目です入力してください
+                        </div>
+                    </div>
+                    <button type="submit" class="form__btn">送信</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrap">
+            <div class="footer__logo">
+                <img src="../images/img_logo.svg" alt="原動力" class="footer__logoImg">
+            </div>
+            <div class="footer__txtArea">
+                <dl>
+                    <dt>SERVICE</dt>
+                    <dd>Web design / coding / banner design</dd>
+                </dl>
+                <dl>
+                    <dt>CONTACT</dt>
+                    <dd>ご依頼、ご相談のある方は下記ボタンをクリック</dd>
+                </dl>
+            </div>
+            <div class="footer_contBtn">
+                <a href="/contact/index.html"><span class="material-symbols-outlined">mail</span>お問い合わせ</a>
+            </div>
+            <div class="footer__instIco">
+                <a href="https://instagram.com/desi_gnda11?igshid=YmMyMTA2M2Y=">
+                    <img src="../images/icon_instagram.svg" alt="Instagram">
+                </a>
+            </div>
+        </div>
+        <p class="footer__cp"><small>©gendohyoku 2023. All rights reserved.</small></p>
+    </footer>
+
+    <script defer>
+        window.addEventListener("load", function () {
+            // ハンバーガーメニュー
+            $(function () {
+                $('.header__humBtn, .header__nav').on('click', function () {
+                    $('.header__humBtn').toggleClass('open');
+                    $('.header__nav').fadeToggle();
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>

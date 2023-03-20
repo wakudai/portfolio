@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原動力 | お問い合わせありがとうございました</title>
+    <meta name="description" content="デザインを通して、あなたの夢や挑戦のきっかけを創ります。 | Webデザイナー 和久井大輔のポートフォリオサイト">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__wrap">
+            <h1 class="header__logo">
+                <a href="/">
+                    <img src="../images/img_logo.svg" alt="原動力" class="header__logoImg">
+                </a>
+            </h1>
+            <div class="header__humBtn">
+                <span class="header__humBtn--line"></span>
+                <span class="header__humBtn--line"></span>
+                <span class="header__humBtn--line"></span>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__navList">
+                    <li class="header__navItem"><a href="/">TOP</a></li>
+                    <li class="header__navItem"><a href="/about/index.html">ABOUT</a></li>
+                    <li class="header__navItem"><a href="/works/index.html">WORKS</a></li>
+                    <li class="header__navItem"><a href="/contact/index.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="mv">
+            <div class="mv__imgBox">
+                <div class="mv__img--bg">
+                    <img src="../images/img_bg.jpg" alt="背景黒">
+                </div>
+                <div class="mv__img--main">
+                    <img src="./images/img_thanks.jpg" alt="お問い合わせありがとうございました">
+                </div>
+            </div>
+            <div class="mv__cont">
+                <h1 class="mv__pageTtl">THANK YOU</h1>
+                <p class="mv__page--subTtl">お問い合わせありがとうございました</p>
+            </div>
+        </div>
+        <section class="thanks sect" id="thanks">
+            <div class="thanks__wrap">
+                <h2 class="thanks__ttl">お問い合わせありがとうございました！</h2>
+                <p class="thanks__txt">
+                    お問い合わせ内容については、順次対応させていただきます。<br>
+                    確認のため、自動返信メールをお送りしております。<br>
+                    ご入力いただいた内容を確認後、3日以内に返信いたします。<br>
+                    それまでの間、私のInstagramをお楽しみください!<br>
+                    また、フォロー＆いいね!をよろしくお願いします!
+                </p>
+            </div>
+        </section>
+        <div class="btn">
+            <div class="btn__insta anchor-btn">
+                <a href="https://instagram.com/desi_gnda11?igshid=YmMyMTA2M2Y=">
+                    <img src="../images/icon_instagram.svg" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+            </div>
+            <div class="btn__topBack anchor-btn">
+                <a href="/">
+                    <img src="./images/icon__homesvg.svg" alt="トップへ戻る">
+                    <span>トップへ戻る</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrap">
+            <div class="footer__logo">
+                <img src="../images/img_logo.svg" alt="原動力" class="footer__logoImg">
+            </div>
+            <div class="footer__txtArea">
+                <dl>
+                    <dt>SERVICE</dt>
+                    <dd>Web design / coding / banner design</dd>
+                </dl>
+                <dl>
+                    <dt>CONTACT</dt>
+                    <dd>ご依頼、ご相談のある方は下記ボタンをクリック</dd>
+                </dl>
+            </div>
+            <div class="footer_contBtn">
+                <a href="/contact/index.html"><span class="material-symbols-outlined">mail</span>お問い合わせ</a>
+            </div>
+            <div class="footer__instIco">
+                <a href="https://instagram.com/desi_gnda11?igshid=YmMyMTA2M2Y=">
+                    <img src="../images/icon_instagram.svg" alt="Instagram">
+                </a>
+            </div>
+        </div>
+        <p class="footer__cp"><small>©gendohyoku 2023. All rights reserved.</small></p>
+    </footer>
+
+    <script defer>
+        window.addEventListener("load", function () {
+            // ハンバーガーメニュー
+            $(function () {
+                $('.header__humBtn, .header__nav').on('click', function () {
+                    $('.header__humBtn').toggleClass('open');
+                    $('.header__nav').fadeToggle();
+                })
+            })
+        });
+
+        /* スクロールで横からフェードイン、下からフェードイン */
+        $(function () {
+            $(window).scroll(function () {
+                var windowHeight = $(window).height();
+                var scroll = $(window).scrollTop();
+
+                if (window.matchMedia("(max-width: 1024px)").matches) {
+                    $(("#js_webdesign_ttl")).each(function () {
+                        const targetPosition = $(this).offset().top;
+                        if (scroll > targetPosition - windowHeight + 100) {
+                            $(this).addClass("fadeIn__bottom");
+                        }
+                    });
+                } else {
+                    $(("#js_webdesign_ttl")).each(function () {
+                        const targetPosition = $(this).offset().top;
+                        if (scroll > targetPosition - windowHeight + 100) {
+                            $(this).addClass("fadeIn__left");
+                        }
+                    });
+                }
+
+                if (window.matchMedia("(max-width: 1024px)").matches) {
+                    $(("#js_banner_ttl")).each(function () {
+                        const targetPosition = $(this).offset().top;
+                        if (scroll > targetPosition - windowHeight + 100) {
+                            $(this).addClass("fadeIn__bottom");
+                        }
+                    });
+                } else {
+                    $(("#js_banner_ttl")).each(function () {
+                        const targetPosition = $(this).offset().top;
+                        if (scroll > targetPosition - windowHeight + 100) {
+                            $(this).addClass("fadeIn__right");
+                        }
+                    });
+                }
+
+                $((".webdesign__img, .banner__img")).each(function () {
+                    const targetPosition = $(this).offset().top;
+                    if (scroll > targetPosition - windowHeight + 100) {
+                        $(this).addClass("fadeIn__bottom");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
