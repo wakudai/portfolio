@@ -279,16 +279,15 @@ img {
 
                         .after__hover {
                             display: none;
-
-                            &:hover {
-                                display: inline;
-                            }
                         }
 
-                        .before__hover {
-
-                            &:hover {
+                        &:hover {
+                            .before__hover {
                                 display: none;
+                            }
+
+                            .after__hover {
+                                display: inline;
                             }
                         }
                     }

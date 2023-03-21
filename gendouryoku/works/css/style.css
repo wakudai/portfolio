@@ -246,4 +246,340 @@
 .logo .fadeIn__bottom {
   opacity: 1;
   transform: translateX(0);
+}
+
+.mv__gendouryoku {
+  height: 100vh;
+  background-image: url(../images/gendouryoku_moc-up_pc.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  .mv__gendouryoku {
+    background-image: url(../images/gendouryoku_moc-up_sp.jpg);
+    height: 40vh;
+  }
+}
+
+.gendouryoku__wrap {
+  margin: 150px auto;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .gendouryoku__wrap {
+    margin: 100px auto;
+  }
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap {
+    margin: 80px auto;
+  }
+}
+.gendouryoku__wrap .prod__ttl {
+  font-size: 4rem;
+  font-family: "Noto Sans CJK JP";
+  color: #333;
+  text-align: center;
+  position: relative;
+  padding: 0 55px;
+  margin-bottom: 80px;
+  line-height: 1.6;
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap .prod__ttl {
+    font-size: 2rem;
+    line-height: normal;
+    margin-bottom: 40px;
+  }
+}
+.gendouryoku__wrap .prod__ttl::before, .gendouryoku__wrap .prod__ttl::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 40%;
+  height: 1px;
+  background-color: #333;
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap .prod__ttl::before, .gendouryoku__wrap .prod__ttl::after {
+    width: 35%;
+  }
+}
+.gendouryoku__wrap .prod__ttl::before {
+  left: 0;
+}
+.gendouryoku__wrap .prod__ttl::after {
+  right: 0;
+}
+.gendouryoku__wrap .prod__ttl .prod__url {
+  display: block;
+  font-size: 1.6rem;
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap .prod__ttl .prod__url {
+    font-size: 1.3rem;
+  }
+}
+.gendouryoku__wrap .prod__cont {
+  margin-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap .prod__cont {
+    margin-bottom: 40px;
+  }
+}
+.gendouryoku__wrap .prod__cont .prod__contTtl {
+  text-align: center;
+  font-size: 2.4rem;
+  font-family: "Noto Sans CJK JP";
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: dotted 1px #333;
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap .prod__cont .prod__contTtl {
+    font-size: 1.8rem;
+  }
+}
+.gendouryoku__wrap .prod__cont .prod__contTxt {
+  font-feature-settings: "palt";
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+  font-weight: lighter;
+  color: #333;
+  line-height: 2;
+}
+.gendouryoku__wrap .prod__imgPc {
+  margin-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap .prod__imgPc {
+    margin-bottom: 40px;
+  }
+}
+.gendouryoku__wrap .prod__dtl {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap .prod__dtl {
+    display: block;
+  }
+}
+.gendouryoku__wrap .prod__dtl .prod__dtlRange, .gendouryoku__wrap .prod__dtl .prod__dtlTool, .gendouryoku__wrap .prod__dtl .prod__dtlPeriod {
+  width: 30%;
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap .prod__dtl .prod__dtlRange, .gendouryoku__wrap .prod__dtl .prod__dtlTool, .gendouryoku__wrap .prod__dtl .prod__dtlPeriod {
+    width: 100%;
+  }
+}
+.gendouryoku__wrap .prod__dtl .prod__dtlRange .prod__dtlTtl, .gendouryoku__wrap .prod__dtl .prod__dtlTool .prod__dtlTtl, .gendouryoku__wrap .prod__dtl .prod__dtlPeriod .prod__dtlTtl {
+  text-align: center;
+  background-color: #e6e6e6;
+  padding: 20px;
+  font-size: 2rem;
+  font-family: "Noto Sans CJK JP";
+  color: #333;
+}
+@media (max-width: 767px) {
+  .gendouryoku__wrap .prod__dtl .prod__dtlRange .prod__dtlTtl, .gendouryoku__wrap .prod__dtl .prod__dtlTool .prod__dtlTtl, .gendouryoku__wrap .prod__dtl .prod__dtlPeriod .prod__dtlTtl {
+    font-size: 1.6rem;
+  }
+}
+.gendouryoku__wrap .prod__dtl .prod__dtlRange .prod__dtlTxt, .gendouryoku__wrap .prod__dtl .prod__dtlTool .prod__dtlTxt, .gendouryoku__wrap .prod__dtl .prod__dtlPeriod .prod__dtlTxt {
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+  color: #333;
+}
+.gendouryoku__wrap .prod__dtl .prod__dtlRange .prod__dtlList, .gendouryoku__wrap .prod__dtl .prod__dtlTool .prod__dtlList, .gendouryoku__wrap .prod__dtl .prod__dtlPeriod .prod__dtlList {
+  list-style: circle;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+  color: #333;
+}
+.gendouryoku__wrap .prod__dtl .prod__dtlRange .prod__dtlList .prod__dtlItem, .gendouryoku__wrap .prod__dtl .prod__dtlTool .prod__dtlList .prod__dtlItem, .gendouryoku__wrap .prod__dtl .prod__dtlPeriod .prod__dtlList .prod__dtlItem {
+  margin-bottom: 16px;
+  font-weight: lighter;
+}
+.gendouryoku__wrap .prod__dtl .prod__dtlRange .prod__dtlList .prod__dtlItem:last-child, .gendouryoku__wrap .prod__dtl .prod__dtlTool .prod__dtlList .prod__dtlItem:last-child, .gendouryoku__wrap .prod__dtl .prod__dtlPeriod .prod__dtlList .prod__dtlItem:last-child {
+  margin-bottom: 0;
+}
+
+.mv__brave {
+  height: 100vh;
+  background-image: url(../images/brave-hp.com_mock-up_pc.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  .mv__brave {
+    background-image: url(../images/brave-hp.com_mock-up_sp.jpg);
+    height: 40vh;
+  }
+}
+
+.brave__wrap {
+  margin: 150px auto;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .brave__wrap {
+    margin: 100px auto;
+  }
+}
+@media (max-width: 767px) {
+  .brave__wrap {
+    margin: 80px auto;
+  }
+}
+.brave__wrap .prod__ttl {
+  font-size: 4rem;
+  font-family: "Noto Sans CJK JP";
+  color: #333;
+  text-align: center;
+  position: relative;
+  padding: 0 55px;
+  margin-bottom: 80px;
+  line-height: 1.6;
+}
+@media (max-width: 767px) {
+  .brave__wrap .prod__ttl {
+    font-size: 2rem;
+    line-height: normal;
+    margin-bottom: 40px;
+  }
+}
+.brave__wrap .prod__ttl::before, .brave__wrap .prod__ttl::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 33%;
+  height: 1px;
+  background-color: #333;
+}
+@media (max-width: 767px) {
+  .brave__wrap .prod__ttl::before, .brave__wrap .prod__ttl::after {
+    width: 35%;
+  }
+}
+.brave__wrap .prod__ttl::before {
+  left: 0;
+}
+.brave__wrap .prod__ttl::after {
+  right: 0;
+}
+.brave__wrap .prod__ttl .prod__url {
+  display: block;
+  font-size: 1.6rem;
+}
+@media (max-width: 767px) {
+  .brave__wrap .prod__ttl .prod__url {
+    font-size: 1.3rem;
+  }
+}
+.brave__wrap .prod__cont {
+  margin-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .brave__wrap .prod__cont {
+    margin-bottom: 40px;
+  }
+}
+.brave__wrap .prod__cont .prod__contTtl {
+  text-align: center;
+  font-size: 2.4rem;
+  font-family: "Noto Sans CJK JP";
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: dotted 1px #333;
+}
+@media (max-width: 767px) {
+  .brave__wrap .prod__cont .prod__contTtl {
+    font-size: 1.8rem;
+  }
+}
+.brave__wrap .prod__cont .prod__contTxt {
+  font-feature-settings: "palt";
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+  font-weight: lighter;
+  color: #333;
+  line-height: 2;
+}
+.brave__wrap .prod__imgPc {
+  margin-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .brave__wrap .prod__imgPc {
+    margin-bottom: 40px;
+  }
+}
+.brave__wrap .prod__imgSp {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+.brave__wrap .prod__imgSp picture {
+  width: 30%;
+}
+.brave__wrap .prod__dtl {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .brave__wrap .prod__dtl {
+    display: block;
+  }
+}
+.brave__wrap .prod__dtl .prod__dtlRange, .brave__wrap .prod__dtl .prod__dtlTool, .brave__wrap .prod__dtl .prod__dtlPeriod {
+  width: 30%;
+}
+@media (max-width: 767px) {
+  .brave__wrap .prod__dtl .prod__dtlRange, .brave__wrap .prod__dtl .prod__dtlTool, .brave__wrap .prod__dtl .prod__dtlPeriod {
+    width: 100%;
+  }
+}
+.brave__wrap .prod__dtl .prod__dtlRange .prod__dtlTtl, .brave__wrap .prod__dtl .prod__dtlTool .prod__dtlTtl, .brave__wrap .prod__dtl .prod__dtlPeriod .prod__dtlTtl {
+  text-align: center;
+  background-color: #e6e6e6;
+  padding: 20px;
+  font-size: 2rem;
+  font-family: "Noto Sans CJK JP";
+  color: #333;
+}
+@media (max-width: 767px) {
+  .brave__wrap .prod__dtl .prod__dtlRange .prod__dtlTtl, .brave__wrap .prod__dtl .prod__dtlTool .prod__dtlTtl, .brave__wrap .prod__dtl .prod__dtlPeriod .prod__dtlTtl {
+    font-size: 1.6rem;
+  }
+}
+.brave__wrap .prod__dtl .prod__dtlRange .prod__dtlTxt, .brave__wrap .prod__dtl .prod__dtlTool .prod__dtlTxt, .brave__wrap .prod__dtl .prod__dtlPeriod .prod__dtlTxt {
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+  color: #333;
+}
+.brave__wrap .prod__dtl .prod__dtlRange .prod__dtlList, .brave__wrap .prod__dtl .prod__dtlTool .prod__dtlList, .brave__wrap .prod__dtl .prod__dtlPeriod .prod__dtlList {
+  list-style: circle;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  font-family: "Noto Sans CJK JP";
+  color: #333;
+}
+.brave__wrap .prod__dtl .prod__dtlRange .prod__dtlList .prod__dtlItem, .brave__wrap .prod__dtl .prod__dtlTool .prod__dtlList .prod__dtlItem, .brave__wrap .prod__dtl .prod__dtlPeriod .prod__dtlList .prod__dtlItem {
+  margin-bottom: 16px;
+  font-weight: lighter;
+}
+.brave__wrap .prod__dtl .prod__dtlRange .prod__dtlList .prod__dtlItem:last-child, .brave__wrap .prod__dtl .prod__dtlTool .prod__dtlList .prod__dtlItem:last-child, .brave__wrap .prod__dtl .prod__dtlPeriod .prod__dtlList .prod__dtlItem:last-child {
+  margin-bottom: 0;
 }/*# sourceMappingURL=style.css.map */

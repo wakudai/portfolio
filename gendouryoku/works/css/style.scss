@@ -3,6 +3,7 @@ $accent-color: #f59b00;
 $white: #fff;
 $gray: #b2b2b2;
 $common-use: #333;
+$prod-dtl: #e6e6e6;
 
 // フォント
 $text-font: 'Noto Sans CJK JP';
@@ -298,5 +299,351 @@ $sp: 767px;
     .fadeIn__bottom {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+.mv__gendouryoku {
+    height: 100vh;
+    background-image: url(../images/gendouryoku_moc-up_pc.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include sp {
+        background-image: url(../images/gendouryoku_moc-up_sp.jpg);
+        height: 40vh;
+    };
+}
+
+.gendouryoku__wrap {
+    margin: 150px auto;
+
+    @include tb {
+        margin: 100px auto;
+    };
+
+    @include sp {
+        margin: 80px auto;
+    };
+
+    .prod__ttl {
+        font-size: 4rem;
+        font-family: $text-font;
+        color: $common-use;
+        text-align: center;
+        position: relative;
+        padding: 0 55px;
+        margin-bottom: 80px;
+        line-height: 1.6;
+
+        @include sp {
+            font-size: 2rem;
+            line-height: normal;
+            margin-bottom: 40px;
+        };
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            width: 40%;
+            height: 1px;
+            background-color: $common-use;
+
+            @include sp {
+                width: 35%;
+            };
+        }
+
+        &::before {
+            left:0;
+        }
+
+        &::after {
+            right: 0;
+        }
+
+        .prod__url {
+            display: block;
+            font-size: 1.6rem;
+
+            @include sp {
+                font-size: 1.3rem;
+            };
+        }
+    }
+
+    .prod__cont {
+        margin-bottom: 80px;
+
+        @include sp {
+            margin-bottom: 40px;
+        };
+
+        .prod__contTtl {
+            text-align: center;
+            font-size: 2.4rem;
+            font-family: $text-font;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            border-bottom: dotted 1px $common-use;
+
+            @include sp {
+                font-size: 1.8rem;
+            };
+        }
+
+        .prod__contTxt {
+            font-feature-settings: "palt";
+            text-align: center;
+            font-size: 1.6rem;
+            font-family: $text-font;
+            font-weight: lighter;
+            color: $common-use;
+            line-height: 2;
+        }
+    }
+
+    .prod__imgPc {
+        margin-bottom: 80px;
+
+        @include sp {
+            margin-bottom: 40px;
+        };
+    }
+
+    .prod__dtl {
+        display: flex;
+        justify-content: space-between;
+
+        @include sp {
+            display: block;
+        };
+
+        .prod__dtlRange, .prod__dtlTool, .prod__dtlPeriod {
+            width: 30%;
+
+            @include sp {
+                width: 100%;
+            };
+
+            .prod__dtlTtl {
+                text-align: center;
+                background-color: $prod-dtl;
+                padding: 20px;
+                font-size: 2rem;
+                font-family: $text-font;
+                color: $common-use;
+
+                @include sp {
+                    font-size: 1.6rem
+                };
+            }
+
+            .prod__dtlTxt {
+                font-weight: lighter;
+                text-align: center;
+                font-size: 1.6rem;
+                font-family: $text-font;
+                color: $common-use;
+            }
+
+            .prod__dtlList {
+                list-style: circle;
+                width: 80%;
+                margin: 0 auto;
+                font-size: 1.6rem;
+                font-family: $text-font;
+                color: $common-use;
+
+                .prod__dtlItem {
+                    margin-bottom: 16px;
+                    font-weight: lighter;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mv__brave {
+    height: 100vh;
+    background-image: url(../images/brave-hp.com_mock-up_pc.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include sp {
+        background-image: url(../images/brave-hp.com_mock-up_sp.jpg);
+        height: 40vh;
+    };
+}
+
+.brave__wrap {
+    margin: 150px auto;
+
+    @include tb {
+        margin: 100px auto;
+    };
+
+    @include sp {
+        margin: 80px auto;
+    };
+
+    .prod__ttl {
+        font-size: 4rem;
+        font-family: $text-font;
+        color: $common-use;
+        text-align: center;
+        position: relative;
+        padding: 0 55px;
+        margin-bottom: 80px;
+        line-height: 1.6;
+
+        @include sp {
+            font-size: 2rem;
+            line-height: normal;
+            margin-bottom: 40px;
+        };
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            width: 33%;
+            height: 1px;
+            background-color: $common-use;
+
+            @include sp {
+                width: 35%;
+            };
+        }
+
+        &::before {
+            left:0;
+        }
+
+        &::after {
+            right: 0;
+        }
+
+        .prod__url {
+            display: block;
+            font-size: 1.6rem;
+
+            @include sp {
+                font-size: 1.3rem;
+            };
+        }
+    }
+
+    .prod__cont {
+        margin-bottom: 80px;
+
+        @include sp {
+            margin-bottom: 40px;
+        };
+
+        .prod__contTtl {
+            text-align: center;
+            font-size: 2.4rem;
+            font-family: $text-font;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            border-bottom: dotted 1px $common-use;
+
+            @include sp {
+                font-size: 1.8rem;
+            };
+        }
+
+        .prod__contTxt {
+            font-feature-settings: "palt";
+            text-align: center;
+            font-size: 1.6rem;
+            font-family: $text-font;
+            font-weight: lighter;
+            color: $common-use;
+            line-height: 2;
+        }
+    }
+
+    .prod__imgPc {
+        margin-bottom: 80px;
+
+        @include sp {
+            margin-bottom: 40px;
+        };
+    }
+
+    .prod__imgSp {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 80px;
+
+        picture {
+            width: 30%;
+        }
+    }
+
+    .prod__dtl {
+        display: flex;
+        justify-content: space-between;
+
+        @include sp {
+            display: block;
+        };
+
+        .prod__dtlRange, .prod__dtlTool, .prod__dtlPeriod {
+            width: 30%;
+
+            @include sp {
+                width: 100%;
+            };
+
+            .prod__dtlTtl {
+                text-align: center;
+                background-color: $prod-dtl;
+                padding: 20px;
+                font-size: 2rem;
+                font-family: $text-font;
+                color: $common-use;
+
+                @include sp {
+                    font-size: 1.6rem
+                };
+            }
+
+            .prod__dtlTxt {
+                font-weight: lighter;
+                text-align: center;
+                font-size: 1.6rem;
+                font-family: $text-font;
+                color: $common-use;
+            }
+
+            .prod__dtlList {
+                list-style: circle;
+                width: 80%;
+                margin: 0 auto;
+                font-size: 1.6rem;
+                font-family: $text-font;
+                color: $common-use;
+
+                .prod__dtlItem {
+                    margin-bottom: 16px;
+                    font-weight: lighter;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
     }
 }

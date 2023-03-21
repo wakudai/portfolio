@@ -225,11 +225,11 @@ img {
 .header .header__wrap .header__nav .header__navList .header__navItem a .after__hover {
   display: none;
 }
-.header .header__wrap .header__nav .header__navList .header__navItem a .after__hover:hover {
-  display: inline;
-}
-.header .header__wrap .header__nav .header__navList .header__navItem a .before__hover:hover {
+.header .header__wrap .header__nav .header__navList .header__navItem a:hover .before__hover {
   display: none;
+}
+.header .header__wrap .header__nav .header__navList .header__navItem a:hover .after__hover {
+  display: inline;
 }
 
 .sect__wrap {
